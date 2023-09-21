@@ -23,11 +23,9 @@ public class MainClient {
 
     public static boolean parseHostNPort(String[] args) {
         try {
-//            if (args.length != 2) throw new IllegalArgumentExp("Хост и порт должны быть переданы в виде аргумента командной строки");
-//            host = args[0];
-//            port = Integer.parseInt(args[1]);
-            host = "localhost";
-            port = 6090;
+           if (args.length != 2) throw new IllegalArgumentExp("Хост и порт должны быть переданы в виде аргумента командной строки");
+           host = args[0];
+           port = Integer.parseInt(args[1]);
             if (port < 0) throw new IllegalArgumentExp("Порт должен быть положительным числом");
             return true;
         } catch (IllegalArgumentExp e) {
